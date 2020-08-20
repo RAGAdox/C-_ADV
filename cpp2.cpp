@@ -1,5 +1,6 @@
 #include<iostream>
 #include<thread>
+#include <chrono>
 #ifdef _WIN32
 #include <Windows.h>
 #else
@@ -8,6 +9,8 @@
 using namespace std;
 void tFun(int x){
     cout<<"INSIDE THREAD\t"<<x<<endl;
+    this_thread::sleep_for(1s);
+    cout<<this_thread::get_id()<<endl;
 }
 void tFun(){
     cout<<"INSIDE THREAD "<<endl;
